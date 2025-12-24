@@ -8,6 +8,7 @@ const fetch = require('node-fetch');
 const { fetch: undiciFetch } = require('undici');
 const url = require('url');
 const zlib = require('zlib');
+const { AbortController, AbortSignal } = require('abort-controller');
 
 const app = express();
 app.use(express.json());
@@ -43,7 +44,7 @@ function getStealthHeaders(targetUrl) {
     "Priority": "u=0, i",
     "Sec-Ch-Ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
     "Sec-Ch-Ua-Mobile": "?0",
-    "Sec-Ch-Ua-Platform": "\"Windows\"",
+    "Sec-Ch-Ua-Platform": '"Windows"',
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
     "Sec-Fetch-Site": "none",
